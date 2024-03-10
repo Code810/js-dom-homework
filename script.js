@@ -183,7 +183,7 @@ multiply.onclick= function() {
     }
 }
 resultcaculate.onclick= function() {
-  if (resulttest) {
+  if (resulttest&&num1!=""&&num2!="") {
     screen.innerText+=resultcaculate.value;
     switch (caculateproses) {
         case "-": screen.innerText+=Number(num1)-Number(num2); resulttest=false;
