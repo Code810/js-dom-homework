@@ -53,21 +53,9 @@ btn4.addEventListener("click", function(){
     inp2.value="";
 })
 
-let input1=document.querySelector(".btn1");
-let input2=document.querySelector(".btn2");
-let input3=document.querySelector(".btn3");
-let input4=document.querySelector(".btn4");
-let input5=document.querySelector(".btn5");
-let input6=document.querySelector(".btn6");
-let input7=document.querySelector(".btn7");
-let input8=document.querySelector(".btn8");
-let input9=document.querySelector(".btn9");
-let input0=document.querySelector(".btn0");
+let inputs=document.querySelectorAll(".btn1")
+let prosesclick=document.querySelectorAll(".btn2")
 let clear=document.querySelector(".btnc");
-let divide=document.querySelector(".btndivide");
-let minus=document.querySelector(".btnminus");
-let plus=document.querySelector(".btnplus");
-let multiply=document.querySelector(".btnx");
 let resultcaculate=document.querySelector(".btnresult");
 let screen= document.querySelector(".screen");
 let proses=false;
@@ -75,77 +63,15 @@ let caculateproses="";
 let num1="";
 let num2="";
 let resulttest=true;
-
-input1.onclick= function() {
-    screen.innerText+=input1.value;
-    if (!proses) {
-        num1+=input1.value
+inputs.forEach(input => {
+    input.onclick= function() {
+        screen.innerText+=input.value;
+        if (!proses) {
+            num1+=input.value
+        }
+        else num2+=input.value
     }
-    else num2+=input1.value
-}
-input2.onclick= function() {
-    screen.innerText+=input2.value;
-    if (!proses) {
-        num1+=input2.value
-    }
-    else num2+=input2.value
-}
-input3.onclick= function() {
-    screen.innerText+=input3.value;
-    if (!proses) {
-        num1+=input3.value
-    }
-    else num2+=input3.value
-}
-input4.onclick= function() {
-    screen.innerText+=input4.value;
-    if (!proses) {
-        num1+=input4.value
-    }
-    else num2+=input4.value
-}
-input5.onclick= function() {
-    screen.innerText+=input5.value;
-    if (!proses) {
-        num1+=input5.value
-    }
-    else num2+=input5.value
-}
-input6.onclick= function() {
-    screen.innerText+=input6.value;
-    if (!proses) {
-        num1+=input6.value
-    }
-    else num2+=input6.value
-}
-input7.onclick= function() {
-    screen.innerText+=input7.value;
-    if (!proses) {
-        num1+=input7.value
-    }
-    else num2+=input7.value
-}
-input8.onclick= function() {
-    screen.innerText+=input8.value;
-    if (!proses) {
-        num1+=input8.value
-    }
-    else num2+=input8.value
-}
-input9.onclick= function() {
-    screen.innerText+=input9.value;
-    if (!proses) {
-        num1+=input9.value
-    }
-    else num2+=nput9.value
-}
-input0.onclick= function() {
-    screen.innerText+=input0.value;
-    if (!proses) {
-        num1+=input0.value
-    }
-    else num2+=input0.value
-}
+});
 clear.onclick= function() {
     screen.innerText="";
     caculateproses="";
@@ -154,34 +80,16 @@ clear.onclick= function() {
     proses=false;
     resulttest=true;
 }
-divide.onclick= function() {
-   if (caculateproses==""&&num1!="") {
-    screen.innerText+=divide.value;
-    caculateproses=divide.value;
-    proses=true;
-   }
-}
-plus.onclick= function() {
-    if (caculateproses==""&&num1!="") {
-    screen.innerText+=plus.value;
-    caculateproses=plus.value;
-    proses=true;
-    }
-}
-minus.onclick= function() {
-    if (caculateproses==""&&num1!="") {
-    screen.innerText+=minus.value;
-    caculateproses=minus.value;
-    proses=true;
-    }
-}
-multiply.onclick= function() {
-    if (caculateproses==""&&num1!="") {
-    screen.innerText+=multiply.value;
-    caculateproses=multiply.value;
-    proses=true;
-    }
-}
+prosesclick.forEach(set => {
+    set.onclick= function() {
+        if (caculateproses==""&&num1!="") {
+         screen.innerText+=set.value;
+         caculateproses=set.value;
+         proses=true;
+        }
+     }
+});
+
 resultcaculate.onclick= function() {
   if (resulttest&&num1!=""&&num2!="") {
     screen.innerText+=resultcaculate.value;
