@@ -110,3 +110,34 @@ resultcaculate.onclick= function() {
 
 
 }
+
+
+// let listElements=document.querySelectorAll("li");
+// let newList=[];
+// let newUl=document.createElement("ul");
+// let box=document.getElementById("lists");
+// box.appendChild(newUl);
+
+// listElements.forEach(element => {
+// if (!newList.find(e=>e==element.innerText)) {
+//     newList.push(element.innerText)
+//     var li=document.createElement('li');
+//     newUl.appendChild(li);
+//     li.innerText+= element.innerText;
+// }
+// });
+
+let listElements=document.querySelectorAll("li");
+let newList=[];
+let newUl=document.createElement("ul");
+let box=document.getElementById("lists");
+box.appendChild(newUl);
+
+listElements.forEach(element => {
+if (!newList.find(e=>e==element.innerText)) {
+    newList.push(element.innerText);
+    var li=document.createElement('li');
+    newUl.appendChild(li);
+    li.innerText+= element.innerText;
+}
+});
